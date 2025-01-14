@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buenos días, mi amor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #87ceeb, #ffffff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        .sun {
+            font-size: 150px;
+            animation: sunrise 4s ease-in-out forwards;
+        }
+        
+        @keyframes sunrise {
+            0% {
+                transform: translateY(150px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .heart {
+            font-size: 120px;
+            margin-top: 20px;
+            animation: beat 1.5s infinite;
+        }
+        
+        @keyframes beat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #333;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .kiss-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .kiss-button:hover {
+            background-color: #ff1493;
+        }
+        
+        .activities {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .activities h3 {
+            margin-top: 0;
+            color: #ff69b4;
+        }
+        /* Responsive styles for small screens */
+        
+        @media (max-width: 768px) {
+            .activities {
+                text-align: center;
+                margin-top: 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sun">☀️</div>
+        <div class="heart">❤️</div>
+        <div class="message">
+            Buenos días, mi amor ❤️<br> Espero que tengas un <strong>feliz martes 14/1/2025</strong>.<br> Te amo muchísimo, pero muchísimo, muchísimo! 💖<br> Hey lo de anoche de beras que fue increible. Literalmente increible jajajaj nunca sensti tantas
+            ganas y no hacerlo wow. Te amo muchisimo se me fue un poquito el dolor pero aun no se ah bajado. Es raro como que hay sangre jajajaj <strong> Te Amo muchisimo BB MUAAAA ❤️❤️❤️❤️❤️</strong>
+        </div>
+        <button class="kiss-button" onclick="sendKiss()">Muaaaaaaaaa 💋</button>
+        <div class="activities">
+            <h3>Actividades</h3>
+            <p>🌟 Despertar Muaaa.</p>
+            <p>📚 Hoy Es el segundo dia de examenes. Y no me pasaste lo que te pedi 😒</p>
+            <p>💑 Escuchare a bts pero canciones individuales en el trabajo jsjs Te amo </p>
+            <p>🏠 Hoy voy a ver la casa del alquiler a las 14:30</p>
+            <P>❤️ Estamos re cerca de mitad de mes bb estoy super mega hiper emocionado MUAAA</P>
+        </div>
+    </div>
+
+    <script>
+        function sendKiss() {
+            alert(" ayer no toco para mi pero es como si, si lo hubiera echo 😏. Fue increible MUAAAA TE AMO MUCHISIMO ❤️");
+        }
+    </script>
+</body>
+
+</html>
