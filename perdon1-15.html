@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdón, mi amor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #001f4d, #000);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        .moon {
+            font-size: 150px;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            animation: fadeInText 3s ease-in-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .transition {
+            margin-top: 30px;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .activities {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+        
+        .activities h3 {
+            color: #ffd700;
+        }
+        
+        #countdown {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ff69b4;
+        }
+        
+        @keyframes nightToDay {
+            0% {
+                background: linear-gradient(to bottom, #001f4d, #000);
+            }
+            100% {
+                background: linear-gradient(to bottom, #87ceeb, #ffffff);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="moon">🌙</div>
+        <div class="message" id="message">
+            Mi bb mi amor, quiero pedirte disculpas desde el fondo de mi corazón. Sé que cometí nuevamente otro error. pero quiero que sepas cuánto te amo y lo mucho que significas para mí. 💖
+        </div>
+        <div id="countdown">Faltan: Calculando...</div>
+        <button class="transition" onclick="transitionToDay()">Vamos a salir adelante</button>
+        <div class="activities" id="activities" style="display: none;">
+            <h3>Actividades del día</h3>
+            <p>🌅 me encantaria empezar el dia contigo la verdad 😥</p>
+            <p>✨ Resolver cualquier malentendido con amor.</p>
+            <p>❤️ Cuidarnos y amarnos siempre.</p>
+        </div>
+    </div>
+
+    <script>
+        // Configurar fecha de llegada
+        const targetDate = new Date('2025-02-01T21:00:00');
+
+        // Actualizar contador cada segundo
+        setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').textContent = "¡Ya aterrizaste, mi amor! 💖";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = `Faltan: ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos.`;
+        }, 1000);
+
+        function transitionToDay() {
+            document.body.style.animation = "nightToDay 5s forwards";
+            document.getElementById('message').textContent = "El día comienza, y seguimos juntos. Te amo más que nunca. 💖";
+            document.getElementById('activities').style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
