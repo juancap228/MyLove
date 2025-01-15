@@ -56,6 +56,25 @@
             }
         }
         
+        .song-lyrics {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #ffd700;
+            opacity: 0;
+            animation: revealLyrics 6s ease-in-out forwards;
+        }
+        
+        @keyframes revealLyrics {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .transition {
             margin-top: 30px;
             font-size: 1rem;
@@ -114,6 +133,9 @@
         <div class="message" id="message">
             Mi bb mi amor, quiero pedirte disculpas desde el fondo de mi corazón. Sé que cometí nuevamente otro error. pero quiero que sepas cuánto te amo y lo mucho que significas para mí. 💖
         </div>
+        <div class="song-lyrics">
+            "'Til the end of the day, maybe we could be slow dancing Until the morning, we could be romancing The night away 🎵🎶🎶 "
+        </div>
         <div id="countdown">Faltan: Calculando...</div>
         <button class="transition" onclick="transitionToDay()">Vamos a salir adelante</button>
         <div class="activities" id="activities" style="display: none;">
@@ -126,7 +148,7 @@
 
     <script>
         // Configurar fecha de llegada
-        const targetDate = new Date('2025-02-01T21:00:00');
+        const targetDate = new Date('2025-02-01T21:55:00');
 
         // Actualizar contador cada segundo
         setInterval(() => {
