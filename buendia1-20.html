@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buenos días, mi amor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #87ceeb, #ffffff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        .sun {
+            font-size: 150px;
+            animation: sunrise 4s ease-in-out forwards;
+        }
+        
+        @keyframes sunrise {
+            0% {
+                transform: translateY(150px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .heart {
+            font-size: 120px;
+            margin-top: 20px;
+            animation: beat 1.5s infinite;
+        }
+        
+        @keyframes beat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #333;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .kiss-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .kiss-button:hover {
+            background-color: #ff1493;
+        }
+        
+        .activities {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .activities h3 {
+            margin-top: 0;
+            color: #ff69b4;
+        }
+        /* Responsive styles for small screens */
+        
+        @media (max-width: 768px) {
+            .activities {
+                text-align: center;
+                margin-top: 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sun">☀️</div>
+        <div class="heart">❤️</div>
+        <div class="message">
+            Amorrrr Buenos dias 🤠❤️<br> Espero que estes mucho pero mucho mejor en este <strong> 20/1/2025</strong>.<br> Recien empieza la semana y nada que decir. Me dormi tarde pero estoy con todas las energias espero que estes igual 💖<br> Te amo
+            muchisimo tengo tremendas ganas de darte tremendo abrazo 🫂<strong> Te Amo muchisimo  muchisimooooooo BB MUAAAA ❤️❤️❤️❤️❤️</strong>
+        </div>
+        <button class="kiss-button" onclick="sendKiss()">Muaaaaaaaaa 💋</button>
+        <div id="countdown">Faltan: Calculando...</div>
+        <div class="activities">
+            <h3>Actividades</h3>
+            <p>🌟 Despertar Muaaa.</p>
+            <p>📖 Examen de mecanica🧑‍🎓 </p>
+            <p>🤒Si te encontras mejor ir a ver las casas</p>
+            <p>✍️ Hoy tengo que ir a firmar lo del auto bb 🚗 </p>
+        </div>
+    </div>
+
+    <script>
+        function sendKiss() {
+            alert('Solo tengo que decir "Te Amo Muchisimo bb" Espero lo mejor para tu examen BB Ya falta super poquito para estar juntitos ❤️‍🔥❤️‍🔥');
+        }
+    </script>
+    <script>
+        // Configurar fecha de llegada
+        const targetDate = new Date('2025-02-01T21:55:00');
+
+        // Actualizar contador cada segundo
+        setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').textContent = "¡Ya aterrizaste, mi amor! 💖";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = `Faltan: ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos.`;
+        }, 1000);
+
+        function transitionToDay() {
+            document.body.style.animation = "nightToDay 5s forwards";
+            document.getElementById('message').textContent = "El día comienza, y seguimos juntos. Te amo más que nunca. 💖";
+            document.getElementById('activities').style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
