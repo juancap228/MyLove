@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siempre contigo, mi amor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #6a85b6, #ffffff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 2s ease-in-out;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        .heart {
+            font-size: 120px;
+            margin-top: 20px;
+            animation: beat 1.5s infinite;
+        }
+        
+        @keyframes beat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #333;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .support-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #4169e1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .support-button:hover {
+            background-color: #1e50a2;
+        }
+        
+        .support-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #555;
+            display: none;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        
+        #countdown {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ff4500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="message">
+            Mi amor, se que este es un momento dificil, pero quiero que sepas que no estás sola. estoy aqui para sostener tu mano, para abrazarte cuando lo necesites y para apoyarte en todo. Pase lo que pase, siempre estaré a tu lado, porque te amo con todo mi corazón
+            💖💖💖 TE AMO MUCHISIMO BB MUAAA❤️‍🔥❤️‍🔥. Te esperare siempre 💖💖
+        </div>
+        <button class="support-button" onclick="showSupport()">Siempre contigo 💕</button>
+        <div id="supportMessage" class="support-message">
+            No importa qué tan difícil sea el camino, lo recorreremos juntos 💪❤️
+        </div>
+        <div id="countdown">Faltan: Calculando...</div>
+    </div>
+
+    <script>
+        function showSupport() {
+            document.getElementById('supportMessage').style.display = 'block';
+        }
+
+        // Configurar fecha de llegada
+        const targetDate = new Date('2025-02-01T21:55:00');
+
+        // Actualizar contador cada segundo
+        setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').textContent = "¡Ya aterrizaste, mi amor! 💖";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent = `Faltan: ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos.`;
+        }, 1000);
+    </script>
+</body>
+
+</html>
