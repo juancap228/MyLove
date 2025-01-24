@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 #card {
-    height: 500px;
-    width: 800px;
+    height: 700px;
+    width: 1000px;
     margin: 5em auto;
     position: fixed;
     top: -15px;
@@ -28,7 +28,7 @@
 
 .side {
     background: #eee;
-    height: 550px;
+    height: 650px;
     width: 400px;
     /*    border:1px solid red; */
     padding: 10px;
