@@ -20,7 +20,7 @@ document.getElementById('siBtn').addEventListener('click', function() {
 
     // Mostrar el mensaje específico
     document.getElementById('messageContainer').style.display = 'block';
-    document.getElementById('messageContainer').innerHTML = '¡Sabia que aceptarias! jajaja';
+    document.getElementById('messageContainer').innerHTML = '¡Sabia que aceptarias MUAAA TE AMO MI PEQUEÑA... Hey tienes mi corazon en tus manos MUAA!!! ❤️❤️❤️';
 
     // Mostrar otro gif después de 3 segundos
     setTimeout(function() {
