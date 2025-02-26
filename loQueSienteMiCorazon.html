@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta para mi amor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Cambié height por min-height */
+            background-color: #ffebee;
+            font-family: Arial, sans-serif;
+            overflow-y: auto;
+            /* Permite desplazamiento si el contenido es largo */
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .letter {
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .letter:hover {
+            transform: scale(1.2);
+        }
+        
+        .card {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .heart {
+            font-size: 40px;
+            color: red;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .heart:hover {
+            transform: scale(1.3);
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="letter" onclick="openCard()">📩</div>
+        <div class="card" id="card">
+            <h3>Para mi hermosa novia y para seguir avanzando hacia un futuro juntos 💖</h3>
+            <p>Amor. Primero que nada siempre recuerda que te amo muchísimo. Lo siguiente no es para tirar heter ni mucho menos. Solo quiero que nuestra relación avance en el mejor de los sentidos literalmente.</p>
+            <p>Si me engañas no te lo perdonaria jamás. Tengo amor propio, soy una gran persona. Si me engañas es porque no me sabes aprovechar, lo que soy y lo que puedo darte. Solo lo menciono porque otras veces hemos hablado de eso y te dicho como que
+                "puede ser" puede ser nada. Seria algo que no perdonaria nunca</p>
+            <p>No me gusta para nada que si te llamo me dejes sonando. Me cortas, así sé que estás ahí, solo que ocupada. *No me dejes sonando*.</p>
+            <p>Aceptaste ser la novia de Kevin por necesidad, no por gusto, y lo entiendo perfectamente. Tú lo ves como un "primo" y me parece perfecto. Hasta lo acepté cuando jugamos y me cayó bien. Pero no quiero que se meta en nuestra relación como lo
+                hizo con el Discord. No te dije nada porque en el momento no le tomé importancia, pero lo que hizo estaba hiper mal. Que respete su lugar, no eres su chica ni nada por el estilo. Que lo entienda. Si no lo entiende, está en ti si dejarás
+                que afecte a la relación.</p>
+            <p>A) Se enteró de que fui a Chile y empezó a meterse.</p>
+            <p>B) Ahora quiere irse a trabajar a Chile y quedarse en la casa. Puede ser coincidencia, pero también puede ser una forma de acercarse más a ti.</p>
+            <p>No quiero que me ocultes. Si me vas a invitar a escucharte a hacer ejercicio o jugar Free Fire, ya sea con él u otra persona, si voy a estar ahí, no me ocultes. Si no acepta que esté ahí, es por algo, bb. Cuando me dices que es porque "se
+                paltean", siento que es porque se siente desplazado, porque tiene interés en ti y nota que tú estás enfocada en mí.</p>
+            <p>Te amo muchísimo, amor. Y quiero que esto funcione para la eternidad. Tienes mi corazón, no me cansaré nunca de repetirlo porque así es.</p>
+            <p>No reprimiré lo que siento nunca. Perdón si te palteo o si al jugar juzgamos, pero no criticamos. Puede que te lastime un poquito porque realmente voy a decir lo que siento. aunque si no te digo nada entiende que es porque no tengo nada por
+                el cual tirarte jsjs </p>
+            <p>Tengo la suficiente confianza contigo para hacer todo, amor. ¡Te amo muchísimo! </p>
+            <p> Espero que poco a poco vayas confiando más en mí. Sé que es algo que se gana, no que se impone, y lo entiendo. Pero no dejaré de pedirte fotos porque espero que entiendas que necesito verte… No tiene ningún maldito sentido las ganas que tengo
+                de ver todas tus expresiones. Eres hermosa y divertida. Si pudiera verte, me transmitirías muchísimo más de lo que ya lo haces, y quiero todo de ti, por eso eres mi chica. ¡Muaa! Sí… te explotaré 😈😈 ¡MUA!</p>
+            <div class="heart" onclick="acceptLove()">❤️</div>
+            <p id="heartMessage" class="hidden">Tienes mi corazón en tus manos 💕</p>
+        </div>
+    </div>
+
+    <script>
+        function openCard() {
+            document.getElementById("card").style.display = "block";
+        }
+
+        function acceptLove() {
+            document.getElementById("heartMessage").classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>
